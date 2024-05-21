@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <script src="registration-page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: url("background-image.jpg") no-repeat center center fixed;
+        background-size: cover;
+        background-color: #ffddb7; /* fallback color */
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-110%, -60%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+      }
+
+      .container h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .container input[type="text"],
+      .container input[type="email"],
+      .container input[type="password"],
+      .container input[type="address"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .container input[type="submit"] {
+        width: 100%;
+        background-color: lightgreen;
+        color: #0f0f0f;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .container input[type="submit"]:hover {
+        background-color: #5cb85c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Resgistration</h2>
+
+      <form id="registrationForm">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="text" name="username" placeholder="UserName" required />
+        <input type="text" name="phone" placeholder="Phone Number" required />
+        <input type="email" name="email" placeholder="Email" required />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <input
+          type="address"
+          name="address"
+          placeholder="your address"
+          requires
+        />
+        <input type="submit" value="Resgistration" />
+      </form>
+    </div>
+    <script></script>
+  </body>
+</html>

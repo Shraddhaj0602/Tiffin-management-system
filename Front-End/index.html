@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiffin website</title>
+    <link rel="stylesheet" href="tiffin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <section>
+      <nav>
+        <div class="logo">
+          <img src="images/Tiffin logo.jpg" />
+        </div>
+
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Featured">Featured</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="#Reviews">Reviews</a></li>
+          <li><a href="#Blog">contact</a></li>
+        </ul>
+
+        <div class="social_icon">
+          <i
+            class="fa-solid fa-shopping-cart"
+            onclick="console.log('clicked')"
+          ></i>
+          <button class="login-button">
+            <a href="login-page.html" id="login">Login</a>
+          </button>
+        </div>
+      </nav>
+
+      <div class="main">
+        <div class="main_tag">
+          <h1 class="lobster">
+            WELCOME TO<br /><span class="lobster">INDIAN KITCHEN</span>
+          </h1>
+
+          <p>
+            Step into the heart of home-cooked goodness with our INDIAN KITCHEN!
+            Here, we transform the chaos of meal planning into a seamless
+            experience, delivering homemade culinary delights right to your
+            doorstep. With Our Indian Kitchen, you can bid farewell to mealtime
+            worries and savor the simple joy of a satisfying, wholesome meal
+            delivered right to your doorstep.
+          </p>
+          <a href="#" class="maind_btn">Learn More</a>
+          <a
+            href="/Registration-page.html"
+            class="main_btn"
+            style="
+              margin-left: 25px;
+              background: #ff9b29;
+              border: none;
+              color: white;
+            "
+            >Register</a
+          >
+        </div>
+
+        <div class="main_img">
+          <img src="images/thali1.jpg" class="rounded-lg main-image" />
+        </div>
+      </div>
+    </section>
+
+    <!--Services-->
+
+    <div class="services">
+      <div class="services_box">
+        <div class="services_card">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Fast Delivery</h3>
+          <p>Get your food delievered hot</p>
+        </div>
+
+        <div class="services_card">
+          <i class="fa-solid fa-headset"></i>
+          <h3>24 x 7 Services</h3>
+          <p>Feel free to call</p>
+        </div>
+
+        <div class="services_card">
+          <i class="fa-solid fa-tag"></i>
+          <h3>Good Food</h3>
+          <p>Enjoy your food</p>
+        </div>
+
+        <div class="services_card">
+          <i class="fa-solid fa-lock"></i>
+          <h3>Secure Payment</h3>
+          <p>Thank you very much.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--About-->
+
+    <div class="about" id="About">
+      <div class="about_image">
+        <img src="images/South Indian chef Art paradigm.jpg" />
+      </div>
+      <div class="about_tag">
+        <h1 style="font-weight: bold">About Us</h1>
+        <p>
+          Welcome to Our Indian Kitchen, an online mess system especially for
+          busy students and hardworking professionals seeking the comforting
+          taste of home amidst their hectic schedules. At Our Indian Kitchen, we
+          understand the daily struggles of juggling academics, work, and
+          household responsibilities. That's why we embarked on a mission to
+          provide wholesome home-cooked meals, conveniently packaged in
+          traditional dabbas, to those who find themselves unable to prepare
+          food at home. With Our Indian Kitchen, you can bid farewell to
+          mealtime worries and savor the simple joy of a satisfying, wholesome
+          meal delivered right to your doorstep.
+        </p>
+        <a href="#" class="about_btn">Learn More</a>
+      </div>
+    </div>
+
+    <!--Books-->
+
+    <div class="featured_thali">
+      <h1 style="font-weight: bold">Our Famous Serves</h1>
+
+      <div class="featured_thali_box">
+        <div class="featured_thali_card">
+          <div class="featurde_thali_img">
+            <img src="images/Breakfast Thali _ Tiffin Thali.jpg" />
+          </div>
+
+          <div class="featurde_thali_tag">
+            <h2>South indian Thali</h2>
+            <p class="dish">Dosa + Idli + chutney</p>
+            <div class="categories">south indian food</div>
+            <p class="price">₹100</p>
+            <a
+              href="#"
+              class="f_btn"
+              onclick="HandleCart({'name':'South indian Thali','description':'Dosa + Idli + chutney','category':'south indian food','price':'100'})"
+              >Add To Cart</a
+            >
+          </div>
+        </div>
+
+        <div class="featured_thali_card">
+          <div class="featurde_thali_img">
+            <img src="images/Chhole chawal.jpg" />
+          </div>
+
+          <div class="featurde_thali_tag">
+            <h2>Rice plate</h2>
+            <p class="dish">Rice + Chole</p>
+            <div class="categories">Rice</div>
+            <p class="price">₹40</p>
+            <a
+              class="f_btn"
+              onclick="HandleCart({'name':'Rice plate','description':'Rice + Chole','category':'Rice','price':'40'})"
+              >Add To Cart</a
+            >
+          </div>
+        </div>
+
+        <div class="featured_thali_card">
+          <div class="featurde_thali_img">
+            <img src="images/Indian Chicken Platter.jpg" />
+          </div>
+
+          <div class="featurde_thali_tag">
+            <h2>Chicken plate</h2>
+            <p class="dish">Chicken + 2 Chapati</p>
+            <div class="categories">Chicken platter</div>
+            <p class="price">₹100</p>
+            <a
+              class="f_btn"
+              onclick="HandleCart({'name':'Chicken plate','description':'Chicken + 2 Chapati','category':'Chicken platter','price':'100'})"
+              >Add To Cart</a
+            >
+          </div>
+        </div>
+
+        <div class="featured_thali_card">
+          <div class="featurde_thali_img">
+            <img
+              src="images/coconut chutney recipe _ how to make nariyal chutney recipe.jpg"
+            />
+          </div>
+
+          <div class="featurde_thali_tag">
+            <h2>Idli</h2>
+            <p class="dish">4 Idli + chutney</p>
+            <div class="categories">South Breakfast</div>
+            <p class="price">₹40</p>
+            <a
+              href="#"
+              class="f_btn"
+              onclick="HandleCart({'name':'Idli','description':'4 Idli + chutney','category':'South Breakfast','price':'40'})"
+              >Add To Cart</a
+            >
+          </div>
+        </div>
+
+        <div class="featured_thali_card">
+          <div class="featurde_thali_img">
+            <img
+              src="images/South Indian thali recipe _ Satvik thali recipe _ Lunch thali recipes _ Indian veg thali.jpg"
+            />
+          </div>
+
+          <div class="featurde_thali_tag">
+            <h2>Veg north thali</h2>
+            <p class="dish">2 chapati + rice + dal + 2 bhaji</p>
+            <div class="categories">Veg thali</div>
+            <p class="price">₹150</p>
+            <a
+              href="#"
+              class="f_btn"
+              onclick="HandleCart({'name':'Veg north thali','description':'2 chapati + rice + dal + 2 bhaji','category':'Veg thali','price':'150'})"
+              >Add To Cart</a
+            >
+          </div>
+        </div>
+
+        <div class="featured_thali_card">
+          <div class="featurde_thali_img">
+            <img src="images/Onion Uttapam _ Onion Uthappam.jpg" />
+          </div>
+
+          <div class="featurde_thali_tag">
+            <h2>Onion uttapa</h2>
+            <p class="dish">4 uttapa + chutney</p>
+            <div class="categories">South indian breakfast</div>
+            <p class="price">₹70</p>
+            <a
+              href="#"
+              class="f_btn"
+              onclick="HandleCart({'name':'Onion uttapa','description':'4 uttapa + chutney','category':'South indian breakfast','price':'70'})"
+              >Add To Cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--reviews-->
+
+    <div class="reviews">
+      <h1>Reviews</h1>
+
+      <div class="review_box">
+        <div class="review_card">
+          <i class="fa-solid fa-quote-right"></i>
+          <div class="card_top">
+            <img
+              src="images/Flat Illustration _ Custom Digital Art _ Digital Art Comission _ Djuwitadsgn.jpg"
+            />
+          </div>
+          <div class="card">
+            <h2>Harsh Mehta</h2>
+            <p>the food is really good, and reasonable price.</p>
+            <div class="review_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="review_card">
+          <i class="fa-solid fa-quote-right"></i>
+          <div class="card_top">
+            <img src="images/s a v e & f o l l o w♡.jpg" />
+          </div>
+          <div class="card">
+            <h2>Shweta patil</h2>
+            <p>Thank you so much for the food, it really made me feel home.</p>
+            <div class="review_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="review_card">
+          <i class="fa-solid fa-quote-right"></i>
+          <div class="card_top">
+            <img
+              src="images/Premium Vector _ Boy waving hand greeting cute people illustration.jpg"
+            />
+          </div>
+          <div class="card">
+            <h2>Suraj deshmukh</h2>
+            <p>healthy and tasty, loved it</p>
+            <div class="review_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="review_card">
+          <i class="fa-solid fa-quote-right"></i>
+          <div class="card_top">
+            <img
+              src="images/Premium Vector _ Portrait of a beautiful young woman with short wavy hair.jpg"
+            />
+          </div>
+          <div class="card">
+            <h2>Rujul sinha</h2>
+            <p>Nice food, well packed.</p>
+            <div class="review_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+
+    <footer>
+      <div class="footer_main">
+        <div class="tag">
+          <img src="images/Tiffin logo.jpg" />
+          <p>
+            "Let Our Indian Kitchen be your compass to home-cooked comfort,
+            guiding you through busy days with every delicious bite. Welcome
+            home.
+          </p>
+        </div>
+
+        <div class="tag">
+          <h1>Quick Link</h1>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Menu</a>
+          <a href="#">Reviews</a>
+        </div>
+
+        <div class="tag">
+          <h1>Contact Info</h1>
+          <a href="#"><i class="fa-solid fa-phone"></i>+91 7058384305</a>
+          <a href="#"><i class="fa-solid fa-phone"></i>+91 7058350510</a>
+          <a href="#"
+            ><i class="fa-solid fa-envelope"></i>indian_kitchen@gmail.com</a
+          >
+        </div>
+
+        <div class="tag">
+          <h1>Follow Us</h1>
+          <div class="social_link">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+        </div>
+
+        <div class="tag">
+          <h1>Our Team</h1>
+          <div class="users">
+            <i class="fa-solid fa-user"><span>Rohit Jadhav</span></i>
+            <i class="fa-solid fa-user"><span>Janhavi Parihar</span></i>
+            <i class="fa-solid fa-user"><span>Shraddha Joshi</span></i>
+            <i class="fa-solid fa-user"><span>Niranjana Patil</span></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

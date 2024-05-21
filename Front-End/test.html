@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+  </head>
+  <body>
+    <div id="loginForm">
+      <input
+        type="text"
+        id="emailOrPhone"
+        placeholder="Email or Phone Number"
+        required
+      />
+      <div id="passwordInput" style="display: none">
+        <input type="password" id="password" placeholder="Password" required />
+        <button id="loginButton" onclick="loginWithEmail()">Login</button>
+      </div>
+      <div id="otpInput" style="display: none">
+        <input type="text" id="otp" placeholder="OTP" required />
+        <button id="otpButton" onclick="loginWithPhone()">Verify OTP</button>
+      </div>
+    </div>
+
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC4YAwO-x6Z54Af0c5hw8SOC7X4LGKpKoA",
+        authDomain: "mis-ecom.firebaseapp.com",
+        projectId: "mis-ecom",
+        storageBucket: "mis-ecom.appspot.com",
+        messagingSenderId: "426867110648",
+        appId: "1:426867110648:web:1386a3277a09e79119810d",
+        measurementId: "G-9FM49572ER",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      function showPasswordInput() {
+        document.getElementById("passwordInput").style.display = "block";
+        document.getElementById("otpInput").style.display = "none";
+      }
+
+      function showOTPInput() {
+        document.getElementById("passwordInput").style.display = "none";
+        document.getElementById("otpInput").style.display = "block";
+      }
+
+      function loginWithEmail() {
+        const email = document.getElementById("emailOrPhone").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(email, password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log("User signed in:", user);
+            alert("Login successful!");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error("Error:", errorMessage);
+            alert("Error: " + errorMessage);
+          });
+      }
+
+      function loginWithPhone() {
+        const phoneNumber = document
+          .getElementById("emailOrPhone")
+          .value.trim();
+        const otp = document.getElementById("otp").value.trim();
+
+        // You need to implement OTP verification logic here using Firebase Authentication
+        // This is just a placeholder function
+        console.log("Phone number:", phoneNumber);
+        console.log("OTP:", otp);
+        alert("Phone login not implemented yet!");
+      }
+
+      document
+        .getElementById("emailOrPhone")
+        .addEventListener("input", function () {
+          const value = this.value.trim();
+          if (value.includes("@")) {
+            // If '@' is present, assume it's an email
+            showPasswordInput();
+          } else {
+            // If not, assume it's a phone number
+            showOTPInput();
+          }
+        });
+    </script>
+  </body>
+</html>

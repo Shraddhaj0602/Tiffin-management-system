@@ -1,0 +1,101 @@
+const userSchema = new mongoose.Schema(
+  {
+    Fullname: {
+      type: String,
+      require: true,
+      unique: true,
+      lowecase: true,
+      trim: true,
+      index: true,
+    },
+    username: {
+      type: String,
+      unique: true,
+      required: true,
+      trim: true,
+      index: true,
+    },
+    password: {
+      type: String,
+      required: [true, "Password is required"],
+    },
+    email: {
+      type: String,
+      require: true,
+      unique: true,
+      lowecase: true,
+      trim: true,
+    },
+    address: {
+      type: String,
+      require: true,
+    },
+    refreshToken: {
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
+const orderSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  items: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "MenuItem",
+      required: true,
+    },
+  ],
+  totalPrice: {
+    type: Number,
+    required: true,
+  },
+  status: {
+    type: String,
+    enum: ["Pending", "Confirmed", "Delivered"],
+    default: "Pending",
+  },
+});
+const menuItemSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+    index: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  category: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+});
+const cartItemSchema = new Schema({
+  product: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Product",
+    required: true,
+  },
+  quantity: { type: Number, default: 1 },
+});
+const cartSchema = new Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  items: [cartItemSchema],
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
+});
+
+(This Code that i provided you is a MOngoose Schema CAn you create a Good Diagram for this Schema please)
